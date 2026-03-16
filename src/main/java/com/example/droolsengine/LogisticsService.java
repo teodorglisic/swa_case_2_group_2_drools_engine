@@ -65,6 +65,9 @@ public class LogisticsService {
             kieSession.insert(logistics);
             kieSession.fireAllRules();
 
+            log.info("Destination: {}", logistics.getDestination());
+            log.info("DeliveryCountryManualCheck: {}", logistics.getDeliveryCountryManualCheck());
+            log.info("Weight: {}", logistics.getWeight());
             log.info("DeliveryType: {}", logistics.getDeliveryType());
         } catch (Exception e) {
             log.error("ERROR: ", e);
